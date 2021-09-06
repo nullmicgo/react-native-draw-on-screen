@@ -92,6 +92,16 @@ class ReactNativeDraw extends PureComponent<ReactNativeDrawProps> {
     }
   };
 
+  applyJSScript = (script) => {
+    try {
+      if (this.webref) {
+        this.webref.injectJavaScript(script);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   render() {
     const { htmlStr } = this.state;
 
